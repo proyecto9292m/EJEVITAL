@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eje Vital | Guía educativa independiente de movilidad y seguridad vial</title>
+<meta name="description" content="Guía educativa 100% gratuita y financiada por su autor. Sin ventas, sin donaciones. Información clara sobre movilidad, transporte público y seguridad vial en Colombia.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Eje Vital">
+<link rel="canonical" href="https://ejevital.lat/">
+<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Eje Vital | Guía educativa gratuita">
+<meta property="og:description" content="Contenido educativo sobre movilidad y seguridad vial. Proyecto personal sin ánimo de lucro.">
+<meta property="og:url" content="https://ejevital.lat/">
+<meta property="og:image" content="https://ejevital.lat/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Google tag (gtag.js) - Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18254896446"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'AW-18254896446'); 
+</script>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+:root{
+  --primary:#0a4d3c;      /* Verde profundo */
+  --primary-light:#1a6b56;
+  --accent:#e8b84a;       /* Dorado premium */
+  --bg:#f8faf9;
+  --bg-alt:#eef4f1;
+  --text:#1a2b26;
+  --text-soft:#4a5f57;
+  --border:#d1dfd9;
+  --shadow:0 8px 24px rgba(10,77,60,0.08);
+  --shadow-hover:0 16px 40px rgba(10,77,60,0.15);
+  --radius:12px;
+  --radius-sm:8px;
+  --max:1140px;
+  --font:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body{ font-family:var(--font); color:var(--text); background:var(--bg); line-height:1.7; font-size:16px; -webkit-font-smoothing:antialiased; }
+.container{ width:100%; max-width:var(--max); margin:0 auto; padding:0 24px; }
+
+/* COOKIES */
+.cookie-overlay{ position:fixed; inset:0; background:rgba(10,30,25,0.85); z-index:9998; backdrop-filter:blur(8px); display:none; }
+.cookie-overlay.visible{ display:block; }
+.cookie-banner{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; padding:20px; z-index:9999; }
+.cookie-banner.visible{ display:flex; }
+.cookie-modal{ background:#fff; max-width:560px; width:100%; padding:40px 36px; border-radius:var(--radius); box-shadow:0 30px 80px rgba(0,0,0,0.4); text-align:center; border-top:6px solid var(--accent); animation:cookieIn 0.5s cubic-bezier(0.34,1.56,0.64,1); }
+@keyframes cookieIn{ from{ transform:scale(0.9) translateY(20px); opacity:0; } to{ transform:scale(1) translateY(0); opacity:1; } }
+.cookie-modal h2{ font-size:1.4rem; margin-bottom:12px; color:var(--primary); font-weight:800; }
+.cookie-modal p{ font-size:0.94rem; color:var(--text-soft); margin-bottom:26px; }
+.cookie-modal .cookie-actions{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.cookie-modal .cookie-actions .boton{ padding:12px 30px; border:none; border-radius:var(--radius-sm); font-weight:700; font-size:0.94rem; cursor:pointer; transition:all 0.3s; min-width:150px; font-family:var(--font); }
+.cookie-modal .cookie-actions .boton.aceptar{ background:var(--primary); color:#fff; }
+.cookie-modal .cookie-actions .boton.aceptar:hover{ background:var(--primary-light); transform:translateY(-2px); }
+.cookie-modal .cookie-actions .boton.rechazar{ background:transparent; color:var(--primary); border:2px solid var(--primary); }
+.cookie-modal .cookie-actions .boton.rechazar:hover{ background:var(--primary); color:#fff; transform:translateY(-2px); }
+.cookie-modal .cookie-enlaces{ margin-top:18px; font-size:0.82rem; color:var(--text-soft); }
+.cookie-modal .cookie-enlaces a{ color:var(--primary); font-weight:600; text-decoration:none; }
+.cookie-modal .cookie-enlaces a:hover{ text-decoration:underline; }
+body.cookie-locked{ overflow:hidden; }
+
+.contenido-principal{ display:none; }
+.contenido-principal.visible{ display:block; animation:fadeIn 0.6s ease; }
+@keyframes fadeIn{ from{ opacity:0; transform:translateY(20px); } to{ opacity:1; transform:translateY(0); } }
+
+/* HEADER */
+.header{ position:sticky; top:0; z-index:1000; padding:16px 0; background:rgba(255,255,255,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+.nav-bar{ display:flex; align-items:center; justify-content:space-between; max-width:var(--max); margin:0 auto; padding:0 24px; }
+.logo{ display:flex; align-items:center; gap:12px; font-weight:900; font-size:1.25rem; color:var(--primary); text-decoration:none; letter-spacing:-0.02em; }
+.logo-icon{ width:42px; height:42px; background:linear-gradient(135deg, var(--primary), var(--primary-light)); color:#fff; border-radius:var(--radius-sm); display:grid; place-items:center; font-size:1.2rem; }
+.nav-menu{ display:flex; gap:4px; list-style:none; align-items:center; }
+.nav-menu a{ color:var(--text); padding:8px 16px; border-radius:var(--radius-sm); font-size:0.9rem; font-weight:600; transition:all 0.3s; text-decoration:none; }
+.nav-menu a:hover{ background:var(--bg-alt); color:var(--primary); }
+.nav-menu a.active{ background:var(--primary); color:#fff; }
+.mobile-toggle{ display:none; background:none; border:2px solid var(--border); border-radius:var(--radius-sm); padding:8px 12px; cursor:pointer; font-size:1.2rem; color:var(--primary); }
+
+/* FRANJA DE TRANSPARENCIA */
+.transparency-bar{ background:var(--primary); color:#fff; text-align:center; padding:10px 0; font-size:0.85rem; font-weight:600; letter-spacing:0.02em; }
+.transparency-bar strong{ color:var(--accent); }
+
+/* HERO */
+.hero{ background:linear-gradient(160deg, #0a1f1a 0%, #0d332a 50%, #0a4d3c 100%); color:#fff; padding:100px 0 80px; position:relative; overflow:hidden; }
+.hero::before{ content:''; position:absolute; top:-20%; right:-10%; width:500px; height:500px; background:radial-gradient(circle, rgba(232,184,74,0.15) 0%, transparent 70%); border-radius:50%; }
+.hero .container{ position:relative; z-index:2; }
+.hero-grid{ display:grid; grid-template-columns:1.2fr 1fr; gap:48px; align-items:center; }
+.hero-text h1{ font-size:clamp(2.2rem,4.5vw,3.4rem); font-weight:900; line-height:1.1; letter-spacing:-0.03em; margin-bottom:16px; }
+.hero-text h1 span{ color:var(--accent); }
+.hero-text p{ font-size:1.1rem; color:rgba(255,255,255,0.85); margin-bottom:28px; }
+.hero-card{ background:rgba(255,255,255,0.06); border:1px solid rgba(232,184,74,0.3); backdrop-filter:blur(12px); border-radius:var(--radius); padding:28px; }
+.hero-card h3{ color:var(--accent); font-size:1.1rem; margin-bottom:16px; }
+.hero-card ul{ list-style:none; }
+.hero-card ul li{ display:flex; gap:10px; margin-bottom:12px; font-size:0.92rem; color:rgba(255,255,255,0.9); }
+.hero-card ul li::before{ content:'✓'; color:var(--accent); font-weight:800; }
+
+/* SECCIONES Y TARJETAS */
+.section{ padding:72px 0; }
+.section:nth-child(even){ background:var(--bg-alt); }
+.section-header{ max-width:720px; margin-bottom:40px; }
+.section-tag{ display:inline-block; background:var(--primary); color:#fff; font-weight:800; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:6px 14px; border-radius:4px; margin-bottom:14px; }
+h2{ font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; color:var(--primary); letter-spacing:-0.02em; margin-bottom:12px; }
+h3{ font-size:1.15rem; font-weight:700; color:var(--primary); margin-bottom:8px; }
+p{ color:var(--text-soft); margin-bottom:1rem; }
+
+.grid{ display:grid; gap:20px; }
+.grid-3{ grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
+.grid-2{ grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); }
+
+.card{ background:#fff; border:1px solid var(--border); border-top:4px solid var(--primary); border-radius:var(--radius); padding:28px 24px; box-shadow:var(--shadow); transition:all 0.3s; }
+.card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-hover); border-top-color:var(--accent); }
+.card .icon{ font-size:2rem; margin-bottom:12px; display:block; }
+
+/* AVISOS LEGALES */
+.notice{ border-radius:var(--radius); padding:22px 26px; border-left:5px solid var(--primary); background:var(--bg-alt); margin:24px 0; }
+.notice.info{ border-left-color:#3b82f6; background:#eff6ff; }
+.notice.success{ border-left-color:#10b981; background:#ecfdf5; }
+
+/* FOOTER */
+.footer{ background:#0a1f1a; color:rgba(255,255,255,0.8); padding:60px 0 24px; }
+.footer a{ color:var(--accent); text-decoration:none; }
+.footer a:hover{ text-decoration:underline; }
+.footer-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:32px; margin-bottom:32px; }
+.footer h4{ color:#fff; margin-bottom:12px; font-size:1rem; }
+.footer ul{ list-style:none; }
+.footer ul li{ margin-bottom:8px; font-size:0.9rem; }
+.footer-legal{ border-top:1px solid rgba(255,255,255,0.1); padding-top:24px; font-size:0.82rem; text-align:center; color:rgba(255,255,255,0.5); }
+
+@media (max-width:900px){ .hero-grid{ grid-template-columns:1fr; gap:32px; } .hero-card{ animation:none; } }
+@media (max-width:860px){
+  .mobile-toggle{ display:block; }
+  .nav-menu{ position:absolute; top:80px; left:16px; right:16px; flex-direction:column; align-items:stretch; background:#fff; border:2px solid var(--primary); border-radius:var(--radius); padding:12px 16px; display:none; box-shadow:var(--shadow-hover); }
+  .nav-menu.open{ display:flex; }
+  .nav-menu a{ padding:12px 14px; }
+  .hero{ padding:64px 0 48px; }
+  .section{ padding:48px 0; }
+  .cookie-modal{ padding:28px 20px; margin:12px; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="cookie-overlay" class="cookie-overlay visible"></div>
+<div id="aviso-cookies" class="cookie-banner visible" role="dialog" aria-modal="true" aria-labelledby="cookie-titulo">
+  <div class="cookie-modal">
+    <h2 id="cookie-titulo">Aviso de cookies</h2>
+    <p>Utilizamos cookies para mejorar tu experiencia y analizar el tráfico de forma anónima. Al aceptar, nos permites ofrecerte un contenido más relevante. Puedes rechazar las cookies no esenciales en cualquier momento.</p>
+    <div class="cookie-actions">
+      <button class="boton rechazar" id="btn-rechazar-cookies" type="button">Rechazar</button>
+      <button class="boton aceptar" id="btn-aceptar-cookies" type="button">Aceptar cookies</button>
+    </div>
+    <div class="cookie-enlaces">
+      <a href="privacidad.html">Política de Privacidad</a> ·
+      <a href="politicas-cookies.html">Política de Cookies</a>
+    </div>
+  </div>
+</div>
+
+<div class="contenido-principal" id="contenidoPrincipal">
+
+  <header class="header">
+    <nav class="nav-bar" aria-label="Navegación principal">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">⚡</span>
+        <span>Eje Vital</span>
+      </a>
+      <button class="mobile-toggle" id="botonMenu" aria-label="Abrir menú" aria-expanded="false" type="button">☰</button>
+      <ul class="nav-menu" id="menu">
+        <li><a href="index.html" class="active">Inicio</a></li>
+        <li><a href="#movilidad">Movilidad</a></li>
+        <li><a href="#transporte">Transporte</a></li>
+        <li><a href="#seguridad">Seguridad</a></li>
+        <li><a href="#glosario">Glosario</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="transparency-bar">
+    📚 Guía educativa 100% gratuita · <strong>Financiada y escrita por su autor</strong> · Sin ventas · Sin donaciones · Sin ánimo de lucro
+  </div>
+
+  <main>
+
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-text">
+            <h1>Conecta con la movilidad de Colombia y hazlo con <span>precisión</span></h1>
+            <p>Una guía educativa independiente para comprender la movilidad vial, el transporte público y la seguridad en la vía. Clara, directa, gratuita y para todos.</p>
+            <div style="display:flex; gap:14px; flex-wrap:wrap;">
+              <a href="#movilidad" class="boton primario" style="display:inline-block; padding:14px 32px; border-radius:8px; font-weight:700; background:var(--accent); color:var(--primary); text-decoration:none;">Comenzar ahora</a>
+              <a href="#indice" class="boton secundario" style="display:inline-block; padding:14px 32px; border-radius:8px; font-weight:700; border:2px solid rgba(232,184,74,0.5); color:#fff; text-decoration:none;">Ver temas</a>
+            </div>
+          </div>
+          <div class="hero-card">
+            <h3>Lo que encontrarás</h3>
+            <ul>
+              <li>Cómo funciona el transporte público</li>
+              <li>Qué es la movilidad sostenible</li>
+              <li>Glosario de términos viales</li>
+              <li>Consejos para moverte mejor</li>
+              <li>Todo 100% gratuito y sin registro</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Sobre esta guía</span>
+          <h2>Un proyecto educativo, transparente y para la comunidad</h2>
+          <p>Antes de empezar, queremos ser claros contigo sobre qué es Eje Vital y qué no es.</p>
+        </div>
+        <div class="notice success">
+          <h3>📌 Aviso importante de financiación</h3>
+          <p>Esta guía educativa está <strong>100% financiada y escrita por su autor</strong>. <strong>No se aceptan donaciones. No se procesan pagos. No se vende ningún producto ni servicio.</strong> Todo el contenido es de <strong>libre acceso</strong> y siempre lo será.</p>
+        </div>
+        <div class="grid grid-3">
+          <div class="card"><span class="icon">🎯</span><h3>Nuestro objetivo</h3><p>Reunir información clara y útil sobre movilidad vial, transporte público y seguridad en la vía.</p></div>
+          <div class="card"><span class="icon">🤝</span><h3>Para quién es</h3><p>Para cualquier persona: estudiantes, familias, nuevos usuarios del transporte público y conductores.</p></div>
+          <div class="card"><span class="icon">💚</span><h3>Sin ánimo de lucro</h3><p>No buscamos ganar dinero. Es una iniciativa personal de divulgación para aportar algo positivo.</p></div>
+        </div>
+        <div class="notice info">
+          <h3>Aviso de contenido educativo</h3>
+          <p>La información de este sitio es de carácter <strong>educativo y orientativo</strong>. No reemplaza la normativa oficial de tránsito, la señalización en la vía ni las indicaciones de las autoridades competentes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="movilidad" style="background:var(--bg-alt);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Conceptos</span>
+          <h2>¿Qué es la movilidad vial?</h2>
+        </div>
+        <p>La <strong>movilidad vial</strong> es la capacidad de las personas y los bienes para desplazarse de un lugar a otro dentro de un territorio, utilizando las vías y los distintos medios de transporte disponibles.</p>
+        <div class="grid grid-3">
+           <div class="card"><span class="icon">🚶</span><h3>Las personas</h3><p>Quienes se desplazan: peatones, pasajeros, ciclistas y conductores.</p></div>
+           <div class="card"><span class="icon">🛣️</span><h3>La infraestructura</h3><p>Vías, andenes, ciclorrutas, paraderos, semáforos y señalización.</p></div>
+           <div class="card"><span class="icon">🚌</span><h3>Los vehículos</h3><p>Buses, autos, motos, bicicletas, patinetes y vehículos de carga.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--primary); color:#fff; padding:56px 0; text-align:center;">
+      <div class="container" style="max-width:800px;">
+        <h2 style="color:var(--accent);">Compromiso de transparencia</h2>
+        <p style="font-size:1.1rem; color:rgba(255,255,255,0.9);">
+          <strong>Eje Vital</strong> es una guía educativa <strong>100% financiada y escrita por su autor</strong>. No se aceptan donaciones, no se procesan pagos y no se vende ningún producto o servicio. Todo el contenido es de <strong>libre acceso</strong>.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><h4>⚡ Eje Vital</h4><p>Guía educativa y gratuita sobre movilidad vial, transporte público en Colombia y seguridad vial.</p></div>
+        <div><h4>Temas</h4><ul><li><a href="#movilidad">Movilidad vial</a></li><li><a href="#transporte">Transporte público</a></li><li><a href="#seguridad">Seguridad vial</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="privacidad.html">Privacidad</a></li><li><a href="politicas-cookies.html">Cookies</a></li></ul></div>
+        <div><h4>Contacto</h4><ul><li>📧 <a href="mailto:contacto@ejevital.lat">contacto@ejevital.lat</a></li></ul></div>
+      </div>
+      <div class="footer-legal">
+        <p>© 2026 Eje Vital — Todos los derechos reservados.</p>
+        <p><a href="privacidad.html">Privacidad</a> · <a href="politicas-cookies.html">Cookies</a> · <a href="contacto.html">Contacto</a></p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var overlay = document.getElementById('cookie-overlay');
+  var banner = document.getElementById('aviso-cookies');
+  var btnAceptar = document.getElementById('btn-aceptar-cookies');
+  var btnRechazar = document.getElementById('btn-rechazar-cookies');
+  var contenidoPrincipal = document.getElementById('contenidoPrincipal');
+
+  if(!overlay || !banner || !btnAceptar || !btnRechazar || !contenidoPrincipal){
+    if(contenidoPrincipal){ contenidoPrincipal.classList.add('visible'); }
+    return;
+  }
+
+  var decisionPrevia = localStorage.getItem('ev_cookies_decision');
+  if(decisionPrevia === 'aceptado' || decisionPrevia === 'rechazado'){
+    overlay.classList.remove('visible');
+    banner.classList.remove('visible');
+    document.body.classList.remove('cookie-locked');
+    contenidoPrincipal.classList.add('visible');
+  } else {
+    overlay.classList.add('visible');
+    banner.classList.add('visible');
+    document.body.classList.add('cookie-locked');
+  }
+
+  function aplicarConsentimiento(aceptado){
+    if(typeof gtag === 'function'){
+      gtag('consent', 'update', {
+        'ad_storage': aceptado ? 'granted' : 'denied',
+        'ad_user_data': aceptado ? 'granted' : 'denied',
+        'ad_personalization': aceptado ? 'granted' : 'denied',
+        'analytics_storage': aceptado ? 'granted' : 'denied'
+      });
+    }
+  }
+
+  function cerrarBanner(aceptado){
+    localStorage.setItem('ev_cookies_decision', aceptado ? 'aceptado' : 'rechazado');
+    aplicarConsentimiento(aceptado);
+    overlay.classList.remove('visible');
+    banner.classList.remove('visible');
+    document.body.classList.remove('cookie-locked');
+    contenidoPrincipal.classList.add('visible');
+  }
+
+  btnAceptar.addEventListener('click', function(){ cerrarBanner(true); });
+  btnRechazar.addEventListener('click', function(){ cerrarBanner(false); });
+
+  var botonMenu = document.getElementById('botonMenu');
+  var menu = document.getElementById('menu');
+  if(botonMenu && menu){
+    botonMenu.addEventListener('click', function(){
+      var abierto = menu.classList.toggle('open');
+      botonMenu.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+    });
+  }
+})();
+</script>
+</body>
+</html>
